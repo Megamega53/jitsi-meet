@@ -3,7 +3,7 @@
 #
 # see: dh_installdeb(1)
 
-set -e
+set -e -x
 
 # summary of how this script can be called:
 #        * <postinst> `configure' <most-recently-configured-version>
@@ -132,7 +132,7 @@ case "$1" in
 
             db_set jitsi-meet/jvb-serve "false"
         fi
-
+echo "Tessssstttt $FORCE_NGINX"
         if [[ "$FORCE_NGINX" = "true" && ( -z "$JVB_HOSTNAME_OLD" || "$RECONFIGURING" = "true" ) ]] ; then
 
             # this is a reconfigure, lets just delete old links
